@@ -1,0 +1,14 @@
+[
+  "index",
+  "installation",
+  "installation2",
+  {
+    "type": "divider"
+  },
+  "others",
+  {
+    "type": "custom-link",
+    "label": "goto /api/index",
+    "link": "/api/index"
+  }
+]

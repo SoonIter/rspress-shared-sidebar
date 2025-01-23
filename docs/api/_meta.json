@@ -1,0 +1,18 @@
+[
+  {
+    "type": "custom-link",
+    "label": "介绍",
+    "link": "/api/index"
+  },
+  { "type": "custom-link", "label": "前端安装", "link": "/api/installation" },
+  {
+    "type": "custom-link",
+    "label": "客户端安装",
+    "link": "/api/installation2"
+  },
+  {
+    "type": "divider"
+  },
+  "commands",
+  "single-page"
+]
