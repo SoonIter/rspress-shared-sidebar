@@ -1,10 +1,4 @@
 [
-  "index",
-  "installation",
-  "installation2",
-  {
-    "type": "divider"
-  },
   "others",
   {
     "type": "custom-link",

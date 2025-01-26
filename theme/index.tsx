@@ -1,24 +1,64 @@
-import Theme, { Sidebar, SidebarList } from 'rspress/theme';
+import Theme, { SidebarList, type SidebarData } from 'rspress/theme';
 import { Layout as BaseLayout } from 'rspress/theme';
-import { useState } from 'react';
-import { useLocation } from 'rspress/runtime';
+import { useEffect, useMemo, useState } from 'react';
+import { useLang, useLocation } from 'rspress/runtime';
+
+const createSidebarData = (lang: string, pathname: string): SidebarData => {
+  const langPrefix = lang === 'zh' ? '' : `/${lang}`;
+  const navPrefix = pathname.includes('/api')
+    ? '/api'
+    : pathname.includes('/guide')
+    ? '/guide'
+    : '';
+
+  console.log(navPrefix, 'navPrefix');
+
+  return navPrefix
+    ? [
+        {
+          text: '介绍',
+          link: `${langPrefix}${navPrefix}/index`,
+        },
+        {
+          text: '前端安装',
+          link: `${langPrefix}${navPrefix}/installation`,
+        },
+        {
+          text: '客户端安装',
+          link: `${langPrefix}${navPrefix}/installation2`,
+        },
+        {
+          dividerType: 'solid',
+        },
+      ]
+    : [];
+};
 
 const Layout = () => {
-  const [sidebarData, setSidebarData] = useState([{
-    text: '介绍',
-    link: '/guide/index'
-  },{
-    text: '前端安装',
-    link: '/guide/installation'
-  }, {
-    text: '客户端安装',
-    link: '/guide/installation2'
-  }]);
+  const lang = useLang();
+  const { pathname } = useLocation();
+  console.log(pathname, 2222);
 
-  const { pathname } = useLocation()
-  console.log(sidebarData)
+  const [sidebarData, setSidebarData] = useState(() => {
+    return createSidebarData(lang, pathname);
+  });
+  useEffect(() => {
+    setSidebarData(() => {
+      const res = createSidebarData(lang, pathname);
+      console.log('res', res);
+      return res;
+    });
+  }, [lang, pathname]);
+
   return (
-    <BaseLayout />
+    <BaseLayout
+      beforeSidebar={
+        <SidebarList
+          sidebarData={sidebarData}
+          setSidebarData={setSidebarData}
+        />
+      }
+    />
   );
 };
 

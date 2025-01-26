@@ -1,0 +1,8 @@
+[
+  "others",
+  {
+    "type": "custom-link",
+    "label": "goto /api/index",
+    "link": "/api/index"
+  }
+]

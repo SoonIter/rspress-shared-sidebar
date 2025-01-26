@@ -12,6 +12,13 @@
     "rspress": "^1.40.0",
     "@rspress/shared": "^1.40.0"
   },
+  "pnpm": {
+    "overrides": {
+      "@rsress/core": "/Users/bytedance/Documents/codes/rspress/packages/core",
+      "rspress": "/Users/bytedance/Documents/codes/rspress/packages/cli",
+      "@rspress/shared": "/Users/bytedance/Documents/codes/rspress/packages/shared"
+    }
+  },
   "devDependencies": {
     "@types/node": "^18.11.17",
     "@types/react": "^18.3.18"
