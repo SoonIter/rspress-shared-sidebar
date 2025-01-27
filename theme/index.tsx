@@ -53,10 +53,13 @@ const Layout = () => {
   return (
     <BaseLayout
       beforeSidebar={
-        <SidebarList
-          sidebarData={sidebarData}
-          setSidebarData={setSidebarData}
-        />
+        // some custom style
+        <div style={{ border: '1px solid' }}>
+          <SidebarList
+            sidebarData={sidebarData}
+            setSidebarData={setSidebarData}
+          />
+        </div>
       }
     />
   );

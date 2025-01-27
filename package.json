@@ -14,9 +14,9 @@
   },
   "pnpm": {
     "overrides": {
-      "@rsress/core": "/Users/bytedance/Documents/codes/rspress/packages/core",
-      "rspress": "/Users/bytedance/Documents/codes/rspress/packages/cli",
-      "@rspress/shared": "/Users/bytedance/Documents/codes/rspress/packages/shared"
+      "@rsress/core": "1.40.3-cannary-20250126",
+      "rspress": "1.40.3-cannary-20250126",
+      "@rspress/shared": "1.40.3-cannary-20250126"
     }
   },
   "devDependencies": {
